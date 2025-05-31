@@ -28,6 +28,7 @@ web/         # Web UI (React, Vite, TailwindCSS)
       ├─ providers/   # Context providers
       ├─ utils/       # JS utilities
       └─ App.jsx      # Main component
+  └─ build/           # Production build output (auto-generated)
 fxmanifest.lua        # FiveM resource manifest
 ```
 
@@ -35,28 +36,75 @@ fxmanifest.lua        # FiveM resource manifest
 
 ## 🖥️ Installation & Usage
 
-1. **Clone the repository:**
-   ```sh
-   git clone https://github.com/emanueldev1/react-fivem-base.git
-   cd react-fivem-base/web
-   ```
+### 1. Clone the repository
 
-2. **Install dependencies with pnpm:**
-   ```sh
-   pnpm install
-   ```
+```sh
+git clone https://github.com/emanueldev1/react-fivem-base.git
+cd react-fivem-base/web
+```
 
-3. **Start the development server:**
-   ```sh
-   pnpm run dev
-   ```
+### 2. Install dependencies with pnpm
 
-4. **Build for production:**
+```sh
+pnpm install
+```
+
+### 3. Start the development server
+
+```sh
+pnpm run dev
+```
+
+### 4. Build for production
+
+```sh
+pnpm run build
+```
+This will generate the production files in `web/build`.
+
+---
+
+## 🎮 How to Install as a FiveM Script
+
+1. **Build the web UI:**
    ```sh
    pnpm run build
    ```
+   The output will be in `web/build`.
 
-5. **Integrate the build output into your FiveM resource.**
+2. **Do NOT move the build folder.**  
+   The resource is already configured to use `web/build` as the NUI root.  
+   The `fxmanifest.lua` is set up to use `web/build/index.html` and all assets inside `web/build`.
+
+3. **Resource structure:**  
+   Your resource folder should look like this:
+   ```
+   client/
+   server/
+   web/
+     └─ build/
+     └─ src/
+   fxmanifest.lua
+   ```
+
+4. **Add the resource to your `server.cfg`:**
+   ```cfg
+   ensure your_resource_name
+   ```
+
+---
+
+## ⚡ Live Coding In-Game (Hot Reload)
+
+You can use the `dev:game` script for live coding and automatic rebuilds while your server is running:
+
+1. **Start the watcher:**
+   ```sh
+   pnpm run dev:game
+   ```
+   This will watch for changes and rebuild the UI automatically into `web/build`.
+
+2. **In your FiveM server, refresh the NUI page (usually by reopening the UI or using a reload command) to see your changes instantly, without restarting the server.**
 
 ---
 
