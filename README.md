@@ -119,6 +119,7 @@ You can use the `dev:game` script for live coding and automatic rebuilds while y
 ## 🤝 Credits
 
 Inspiration and workflow from [This Repo](https://github.com/project-error/fivem-react-boilerplate-lua)
+
 Created by [emanueldev1](https://github.com/emanueldev1) for [Quasar Store](https://quasar-store.com).
 
 ---
