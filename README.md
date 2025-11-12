@@ -1,7 +1,4 @@
 # Quasar Store FiveM Template
-
-![Quasar Store Logo](web/src/assets/quasar-logo-with-text.png)
-
 > **A modern UI template for FiveM resources, built with React and Vite.**
 
 ---
@@ -120,7 +117,7 @@ You can use the `dev:game` script for live coding and automatic rebuilds while y
 
 Inspiration and workflow from [This Repo](https://github.com/project-error/fivem-react-boilerplate-lua)
 
-Created by [emanueldev1](https://github.com/emanueldev1) for [Quasar Store](https://quasar-store.com).
+Created by [emanueldev1](https://github.com/emanueldev1).
 
 ---
 
